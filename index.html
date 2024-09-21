@@ -9,15 +9,15 @@
   <body>
     <div class="container">
     <header>
-      <form class="search-form">
-        <input type="input"  placeholder="Enter a city name" class="search-form-input"/>
+      <form class="search-form" id="search-form">
+        <input type="input"  placeholder="Enter a city name" id="search-form-input" class="search-form-input"/>
         <input type="submit" value="Search" class="search-form-button"/>
       </form>
     </header>
     <main >
     <div class="weather-info-details">
     <div>
-      <h1 class="weather-info-city">Paris</h1>
+      <h1 class="weather-info-city" id="city">Paris</h1>
       <p class="weather-app-details">Thursday 17:50, clear sky</br>
       Humidity: <strong>53%</strong>, Wind: <strong>7.72km/h</strong>
     </p>
@@ -42,5 +42,6 @@
       <a href="https://shecodes-myweather-app.netlify.app/">hosted on Netlify</a>
     </footer>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
