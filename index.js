@@ -6,7 +6,7 @@ function refreshWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#wind");
   let timeElement = document.querySelector("#time");
-  console.log(response.data);
+  let date = new Date(response.data.time * 1000);
 
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
@@ -29,6 +29,7 @@ function formatDate(date) {
     "Saturday",
   ];
   let day = days[date.getDay()];
+
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -43,9 +44,7 @@ function searchCity(city) {
 
 function handleSearchSubmit(event) {
   event.preventDefault();
-
   let searchInput = document.querySelector("#search-form-input");
-
   searchCity(searchInput.value);
 }
 
