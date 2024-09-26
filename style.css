@@ -89,8 +89,9 @@ main {
   color: rgba(39, 33, 66, 0.4);
 }
 .weather-forecast-icon {
-  text-align: center;
-  font-size: 38px;
+  width:88px;
+  height:88px;
+  display:block;
 }
 .weather-forecast-temperatures {
   text-align: center;
