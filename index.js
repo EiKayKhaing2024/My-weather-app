@@ -41,7 +41,7 @@ function formatDate(date) {
 }
 function searchCity(city) {
   let apiKey = "81a6fa4co08122d988ca3t732b0bd522";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}& units=metric`;
   axios.get(apiUrl).then(refreshWeather);
 }
 
@@ -60,7 +60,7 @@ function formatDay(timestamp) {
 
 function getForecast(city) {
   let apiKey = "81a6fa4co08122d988ca3t732b0bd522";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}& units=metric`;
   axios(apiUrl).then(displayForecast);
 }
 
@@ -80,11 +80,11 @@ function displayForecast(response) {
         <img src="${day.condition.icon_url}" class="weather-forecast-icon"> 
         <div class="weather-forecast-temperatures">
           <div class="weather-forecast-temperature">
-          <strong>${Math.round(day.temperature.maximum)}</strong>
+          <strong>${Math.round(day.temperature.maximum)}°</strong>
           </div>
           <div class="weather-forecast-temperature">${Math.round(
             day.temperature.minimum
-          )}</div> 
+          )}°</div> 
         </div>
       </div>
       `;
